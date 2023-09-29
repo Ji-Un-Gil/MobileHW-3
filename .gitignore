@@ -2,7 +2,7 @@
 *~
 __pycache__
 djangoenv/myvenv
-djangoenv/test_api/venv
+test_api/venv
 db.sqlite3
 /static
 .DS_Store
