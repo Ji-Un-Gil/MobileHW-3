@@ -11,6 +11,11 @@ def post_list(request):
     return render(request, "blog/post_list.html", {'posts': posts})
 
 
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    serializer_class = PostSerializer
+
+
 class IntruderImage(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
